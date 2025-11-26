@@ -29,9 +29,18 @@ body {
   <p>Sem vlož text, který si má tvoje přítelkyně přečíst.</p>
 </div>
 
-<audio autoplay loop>
-  <source src="https://orangefreesounds.com/wp-content/uploads/2022/12/Christmas-bells.mp3" type="audio/mpeg">
+<audio id="sound" loop>
+  <source src="URL.mp3" type="audio/mpeg">
 </audio>
+
+<script>
+window.onload = function() {
+  const audio = document.getElementById("sound");
+  audio.play().catch(() => {
+      document.body.addEventListener("touchstart", ()=> audio.play(), { once: true });
+  });
+};
+</script>
 
 </body>
 </html>
