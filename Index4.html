@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<title>Nápověda</title>
+<style>
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: aliceblue;
+  background: linear-gradient(#0a5f0a, #159215); /* tmavě → světle zelená */
+  padding: 30px;
+  text-align: center;
+  position: relative;
+  overflow: hidden; /* pro vločky */
+}
+
+.box {
+  background: linear-gradient(#e02a2a, #9b0909);
+  padding: 40px;
+  border-radius: 26px;
+  font-size: 40px;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 300px auto 0 auto;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.28);
+  position: relative;
+  z-index: 10; 
+}
+
+p {
+  font-size: 70px;
+}
+
+/* Sněhové vločky */
+.snowflake {
+  position: fixed;
+  top: -10px;
+  color: white;
+  font-size: 20px;
+  user-select: none;
+  animation: fall linear infinite;
+  opacity: 0.9;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- vločky generujeme -->
+<script>
+function createSnowflake() {
+  const snowflake = document.createElement("div");
+  snowflake.classList.add("snowflake");
+  snowflake.innerHTML = "❄";
+
+  // náhodná velikost
+  snowflake.style.fontSize = (10 + Math.random() * 25) + "px";
+  // náhodná pozice
+  snowflake.style.left = Math.random() * 100 + "vw";
+  // náhodná délka pádu
+  snowflake.style.animationDuration = (5 + Math.random() * 10) + "s";
+  // náhodná průhlednost
+  snowflake.style.opacity = 0.6 + Math.random() * 0.4;
+
+  document.body.appendChild(snowflake);
+
+  // odstranění po dopadu
+  setTimeout(() => snowflake.remove(), 15000);
+}
+
+// každých 200 ms jedna vločka
+setInterval(createSnowflake, 200);
+</script>
+
+<div class="box">
+  <p>🎄 ❄️ ⭐ 🎁</p>
+  <h2>Vánoční nápověda</h2>
+  <h4>“ TEXT4…”</h4>
+</div>
+
+<audio id="sound" loop>
+  <source src="https://mp3zvuky.cz/wp-content/uploads/2019/01/vanocni-zvony.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+window.onload = function() {
+  const audio = document.getElementById("sound");
+  audio.play().catch(() => {
+      document.body.addEventListener("touchstart", ()=> audio.play(), { once: true });
+  });
+};
+</script>
+
+</body>
+</html>
