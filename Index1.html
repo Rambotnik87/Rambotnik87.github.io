@@ -20,19 +20,22 @@ body {
   overflow: hidden; /* pro vločky */
 }
 
-/* Bílej box zůstává beze změny */
 .box {
-  background: rgb(199, 8, 8);
-  padding: 50px;
-  border-radius: 50px;
+  background: rgb(240, 7, 7);
+  padding: 40px;
+  border-radius: 26px;
   font-size: 40px;
-  line-height: 1.5;
+  line-height: 1.6;
   max-width: 600px;
-  margin: auto;
-  box-shadow: 0 20px 15px rgba(0,0,0,0.25);
+  margin: 300px auto 0 auto;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.28);
   position: relative;
   z-index: 10;
+
+  border: 40px solid transparent;
+  border-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDMwMCAzMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CgogIDwhLS0gQmFzZSB6bGF0ZW5lIGdpcmxhbmRhIC0tPgogIDxwYXRoIGQ9Ik0xNSAxNSBIMjg1IFYyODUgSDE1IFoiIHN0cm9rZT0iI2Q4YmY1MCIgc3Ryb2tlLXdpZHRoPSIxNSIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CgogIDwhLS0gTWFzaGxlIC0tdAogIDxwYXRoIGQ9Ik0yMCAyMCBMNjAgNjAiIHN0cm9rZT0iI2QwMDAwMCIgc3Ryb2tlLXdpZHRoPSIzIiBmaWxsPSJub25lIi8+CiAgPHBhdGggZD0iTTI4MCAyMCBMMjQwIDYwIiBzdHJva2U9IiNkMDAwMDAiIHN0cm9rZS13aWR0aD0iMyIgZmlsbD0ibm9uZSIvPgogIDxwYXRoIGQ9Ik0yMCAyODAgTDYwIDI0MCIgc3Ryb2tlPSIjZDAwMDAwIiBzdHJva2Utd2lkdGg9IjMiIGZpbGw9Im5vbmUiLz4KICA8cGF0aCBkPSJNMjgwIDI4MCBMMjQwIDI0MCIgc3Ryb2tlPSIjZDAwMDAwIiBzdHJva2Utd2lkdGg9IjMiIGZpbGw9Im5vbmUiLz4KCiAgPCEtLSBTdnVldGx5LUxpZ2h0cyAtLT4KICA8Y2lyY2xlIGN4PSIyNSIgY3k9IjE1MCIgcj0iNyIgZmlsbD0iI2YyMDAwMCIvPgogIDxjaXJjbGUgY3g9IjI3NSIgY3k9IjE1MCIgcj0iNyIgZmlsbD0iIzAwZmYwMCIvPgogIDxjaXJjbGUgY3g9IjE1MCIgY3k9IjI1IiByPSI3IiBmaWxsPSIjMDBhMGZmIi8+CiAgPGNpcmNsZSBjeD0iMTUwIiBjeT0iMjc1IiByPSI3IiBmaWxsPSIjZjIwMDAwIi8+CgogIDwhLS0gR2lybGFuZGEgLSBncmVlbiBicnVzaGVzIC0tPgogIDxwYXRoIGQ9Ik0xNSAxNSBDNjAgNjAgMjQwIDYwIDI4NSAxNSIgc3Ryb2tlPSIjMDk3YTAwIiBzdHJva2Utd2lkdGg9IjkiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogIDxwYXRoIGQ9Ik0xNSAyODUgQzYwIDI0MCAyNDAgMjQwIDI4NSAyODUiIHN0cm9rZT0iIzA5N2EwMCIgc3Ryb2tlLXdpZHRoPSI5IiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KCiAgPCEtLSBSZWRib3dsIEJvd3MgLS0+CiAgPHBvbHlnb24gcG9pbnRzPSI1MCA1MCA2MCA2MCA1MCA3MCA0MCA2MCIgZmlsbD0iI2QwMDAwMCIvPgogIDxwb2x5Z29uIHBvaW50cz0iMjUwIDUwIDI2MCA2MCAyNTAgNzAgMjQwIDYwIiBmaWxsPSIjZDAwMDAwIi8+CiAgPHBvbHlnb24gcG9pbnRzPSI1MCAyNTAgNjAgMjYwIDUwIDI3MCA0MCAyNjAiIGZpbGw9IiNkMDAwMDAiLz4KICA8cG9seWdvbiBwb2ludHM9IjI1MCAyNTAgMjYwIDI2MCAyNTAgMjcwIDI0MCAyNjAiIGZpbGw9IiNkMDAwMDAiLz4KPC9zdmc+') 60 round;
 }
+
 
 /* Sněhové vločky */
 .snowflake {
@@ -81,7 +84,8 @@ setInterval(createSnowflake, 200);
 </script>
 
 <div class="box">
-  <h2>🎄 Vánoční nápověda</h2>
+  <h1>🎄</h1>
+  <h2>Vánoční nápověda</h2>
   <p>“ Začni u toho nejsladšího co máš nejraději a také nejrychleji mizí…”</p>
 </div>
 
