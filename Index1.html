@@ -22,11 +22,14 @@ body {
 
 .box {
   background: linear-gradient(#e02a2a, #9b0909);
+  background: white url("img/frame2.jpg") no-repeat center;
+  background-size: cover;   /* obrázek se roztáhne přes celý box */
   padding: 40px;
   border-radius: 26px;
   font-size: 40px;
   line-height: 1.6;
-  max-width: 600px;
+  max-width: 650px;
+  min-height: 650px;
   margin: 300px auto 0 auto;
   box-shadow: 0 4px 18px rgba(0,0,0,0.28);
   position: relative;
@@ -34,8 +37,20 @@ body {
 }
 
 p {
-  font-size: 70px;
+  font-size: 40px;
 }
+
+h4 {
+  font-size: 50px;
+  margin-top: 50px;
+  margin-bottom: 0;
+
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
 
 /* Sněhové vločky */
 .snowflake {
@@ -84,7 +99,7 @@ setInterval(createSnowflake, 200);
 </script>
 
 <div class="box">
-  <p>🎄 ❄️ ⭐ 🎁</p>
+  <p>1.</p>
   <h2>Vánoční nápověda</h2>
   <h4>“ Začni u toho nejsladšího co máš nejraději a také nejrychleji mizí…”</h4>
 </div>
