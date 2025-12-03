@@ -5,7 +5,6 @@
 <title>Nápověda</title>
 <style>
 
-<style>
 html, body {
   height: 100%;
   margin: 0;
@@ -13,76 +12,36 @@ html, body {
 
 body {
   font-family: Arial, sans-serif;
-  background: linear-gradient(#0a5f0a, #0f8a0f);
+  color: aliceblue;
+  background: linear-gradient(#0a5f0a, #159215); /* tmavě → světle zelená */
   padding: 30px;
   text-align: center;
+  position: relative;
+  overflow: hidden; /* pro vločky */
 }
 
-/* BOX */
 .box {
-  background: white;
-  padding: 25px;
-  border-radius: 12px;
+  background: linear-gradient(#e02a2a, #9b0909);
+  background: white url("img/frame.jpg") no-repeat center;
+  background-size: cover;   /* obrázek se roztáhne přes celý box */
+
+  padding: 40px;
+  border-radius: 26px;
   font-size: 40px;
   line-height: 1.6;
-  max-width: 600px;
-  margin: 120px auto 0 auto;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  position: relative; 
-}
-
-/* GIRLANDA kolem boxu */
-.box::before,
-.box::after {
-  content: "";
-  position: absolute;
-  left: -40px;
-  right: -40px;
-  height: 60px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  pointer-events: none;
-}
-
-/* horní girlanda */
-.box::before {
-  top: -60px;
-  background-image: url("https://png.pngtree.com/png-clipart/20220916/original/pngtree-christmas-garland-decoration-png-image_8638920.png");
-}
-
-/* spodní girlanda */
-.box::after {
-  bottom: -60px;
-  background-image: url("https://png.pngtree.com/png-clipart/20220916/original/pngtree-christmas-garland-decoration-png-image_8638919.png");
-}
-
-/* Boční girlandy */
-.box > .left,
-.box > .right {
-  content: "";
-  position: absolute;
-  top: -30px;
-  bottom: -30px;
-  width: 60px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  pointer-events: none;
-}
-
-.box > .left {
-  left: -60px;
-  background-image: url("https://png.pngtree.com/png-clipart/20220916/original/pngtree-christmas-tinsel-and-baubles-png-image_8638921.png");
-}
-
-.box > .right {
-  right: -60px;
-  background-image: url("https://png.pngtree.com/png-clipart/20220916/original/pngtree-christmas-tinsel-and-baubles-png-image_8638922.png");
+  max-width: 650px;
+  margin: 300px auto 0 auto;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.28);
+  position: relative;
+  z-index: 10; 
 }
 
 p {
   font-size: 70px;
+}
+
+h4 {
+  font-size: 50px;
 }
 
 /* Sněhové vločky */
@@ -132,11 +91,8 @@ setInterval(createSnowflake, 200);
 </script>
 
 <div class="box">
-    <div class="left"></div>
-    <div class="right"></div>
-  
-    <p>🎄 ❄️ ⭐ 🎁</p>
-  <h2>Vánoční nápověda</h2>
+  <p>🎄 ❄️ ⭐ 🎁</p>
+  <h2>Vánoční nápověda 1.</h2>
   <h4>“ Začni u toho nejsladšího co máš nejraději a také nejrychleji mizí…”</h4>
 </div>
 
