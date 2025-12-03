@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<title>Nápověda</title>
+<style>
+
+<style>
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(#0a5f0a, #0f8a0f);
+  padding: 30px;
+  text-align: center;
+}
+
+/* BOX */
+.box {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  font-size: 40px;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 120px auto 0 auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  position: relative; 
+}
+
+/* GIRLANDA kolem boxu */
+.box::before,
+.box::after {
+  content: "";
+  position: absolute;
+  left: -40px;
+  right: -40px;
+  height: 60px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  pointer-events: none;
+}
+
+/* horní girlanda */
+.box::before {
+  top: -60px;
+  background-image: url("https://png.pngtree.com/png-clipart/20220916/original/pngtree-christmas-garland-decoration-png-image_8638920.png");
+}
+
+/* spodní girlanda */
+.box::after {
+  bottom: -60px;
+  background-image: url("https://png.pngtree.com/png-clipart/20220916/original/pngtree-christmas-garland-decoration-png-image_8638919.png");
+}
+
+/* Boční girlandy */
+.box > .left,
+.box > .right {
+  content: "";
+  position: absolute;
+  top: -30px;
+  bottom: -30px;
+  width: 60px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  pointer-events: none;
+}
+
+.box > .left {
+  left: -60px;
+  background-image: url("https://png.pngtree.com/png-clipart/20220916/original/pngtree-christmas-tinsel-and-baubles-png-image_8638921.png");
+}
+
+.box > .right {
+  right: -60px;
+  background-image: url("https://png.pngtree.com/png-clipart/20220916/original/pngtree-christmas-tinsel-and-baubles-png-image_8638922.png");
+}
+
+p {
+  font-size: 70px;
+}
+
+/* Sněhové vločky */
+.snowflake {
+  position: fixed;
+  top: -10px;
+  color: white;
+  font-size: 20px;
+  user-select: none;
+  animation: fall linear infinite;
+  opacity: 0.9;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- vločky generujeme -->
+<script>
+function createSnowflake() {
+  const snowflake = document.createElement("div");
+  snowflake.classList.add("snowflake");
+  snowflake.innerHTML = "❄";
+
+  // náhodná velikost
+  snowflake.style.fontSize = (10 + Math.random() * 25) + "px";
+  // náhodná pozice
+  snowflake.style.left = Math.random() * 100 + "vw";
+  // náhodná délka pádu
+  snowflake.style.animationDuration = (5 + Math.random() * 10) + "s";
+  // náhodná průhlednost
+  snowflake.style.opacity = 0.6 + Math.random() * 0.4;
+
+  document.body.appendChild(snowflake);
+
+  // odstranění po dopadu
+  setTimeout(() => snowflake.remove(), 15000);
+}
+
+// každých 200 ms jedna vločka
+setInterval(createSnowflake, 200);
+</script>
+
+<div class="box">
+    <div class="left"></div>
+    <div class="right"></div>
+  
+    <p>🎄 ❄️ ⭐ 🎁</p>
+  <h2>Vánoční nápověda</h2>
+  <h4>“ Začni u toho nejsladšího co máš nejraději a také nejrychleji mizí…”</h4>
+</div>
+
+<audio id="sound" loop>
+  <source src="https://mp3zvuky.cz/wp-content/uploads/2019/01/vanocni-zvony.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+window.onload = function() {
+  const audio = document.getElementById("sound");
+  audio.play().catch(() => {
+      document.body.addEventListener("touchstart", ()=> audio.play(), { once: true });
+  });
+};
+</script>
+
+</body>
+</html>
